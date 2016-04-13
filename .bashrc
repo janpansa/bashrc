@@ -49,10 +49,10 @@ alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rns \$(/
 # 7 - ti		Hy maak oop in 'n interactive shell
 #
 
-alias drupaldev7="docker run --rm --name d7_dev --net drupal_default --volumes-from drupal_apache2_1 --link drupal_mariadb_1 -ti julianlab/drupal:7.x"
+alias drupaldev7="docker run --rm --name d7_dev --net drupal_default --volumes-from drupal_apache2_1 -v /home/gideon/.ssh:/var/www/.ssh --link drupal_mariadb_1 -ti julianlab/drupal:7.x"
 
 # Start a Drupal 8 Dev Enviroment
-alias drupaldev8="docker run --rm --name d8_dev --net drupal_default --volumes-from drupal_apache2_1 --link drupal_mariadb_1 -ti julianlab/drupal:8.x"
+alias drupaldev8="docker run --rm --name d8_dev --net drupal_default --volumes-from drupal_apache2_1 -v /home/gideon/.ssh:/var/www/.ssh  --link drupal_mariadb_1 -ti julianlab/drupal:8.x"
 
 # Node command
 alias node='docker run -it --rm --name nodejs-container -p 8081:8081 -v "$PWD":/usr/src/app -w /usr/src/app node:4 node'
